@@ -1,4 +1,4 @@
-let {testHigherScore,testLowerScore,toAddStudentScore,toGetTheSquareOfNumbers,sarahBooks} = require("./assessment1.js");
+let {testHigherScore,testLowerScore,toAddStudentScore,toGetTheSquareOfNumbers,sarahBooks,jackTime,davidExpense} = require("./assessment1.js");
 
 
 test("test to get numbers higer than 70", () =>{
@@ -42,19 +42,26 @@ test("test to assign books", () =>{
                             {name: "Daniel", book: "chemistry"}]);
 })
 
+test("test to check jasks time",() =>{
+    let time1 = ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM","5:00 PM"]
+    let afternoonTime = jackTime(time1)
+    expect(afternoonTime).toEqual(["1:00 PM","3:00 PM","5:00 PM"])
+})
+
+test("test to check david expenses",() =>{
+    let value = [{"groceries": 150},
+                {"dining out": 100}, 
+                {"transportation": 50}, 
+                {"entertainment": 80}]
+    let monthlyExpense = [150,100,50,80]
+    //let monthly=  davidExpense(value)
+    //let monthly2 =davidExpense(monthlyExpense)    
+    let mont = davidExpense(monthlyExpense)   
+   
+   // expect(monthly2).toBe(380)
+    expect(mont).toBe(380)
+})
 
 
-// test("Add two numbers", () =>{
-//     let a = 3;
-//     let b = 5;
 
-//     let answer = addNumbers(a,b);
 
-//     expect(answer).toBe(8);
-// })
-
-// test("filter even numbers",() =>{
-//     let arr = [1,2,3,4,5,6];
-//     let answer = evenNumber(arr);
-
-//     expect(answer).toEqual([2,4,6])

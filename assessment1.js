@@ -51,28 +51,50 @@ function sarahBooks(members,book){
     return assignedBooks
 }
 
-function davidExpense(){
+
+
+function jackTime(time){
+
+   return time.filter((num) => num.endsWith("PM"));
     
 }
-module.exports = {testHigherScore,testLowerScore,toAddStudentScore,toGetTheSquareOfNumbers,sarahBooks}
 
 
-// function addNumbers(x,y){
-//     let answer = x +y;
-//     return answer
-// }
+function davidExpense(expenses){
 
-// function evenNumber(numbers){
-//     return numbers.filter(number => number % 2 == 0);
-//     //return XPathResult;
-// }
+    let total =0
+    let tot = 0;
+   for (let expense in expenses) {
+        for(let key in expense){
+            tot = expenses[expense]
+            total = expenses[key]+ tot
+        }
+        console.log(total)
+   }
+   return total
+}
+module.exports = {testHigherScore,testLowerScore,toAddStudentScore,toGetTheSquareOfNumbers,sarahBooks,jackTime,davidExpense}
 
-// module.exports = {addNumbers,evenNumber}
+// let print = console.log
+
+// let value = [{"groceries": 150},
+// {"dining out": 100}, 
+// {"transportation": 50}, 
+// {"entertainment": 80}]
+
+// // for (let key in value){
+// //     for(u in key){
+// //         print(value[u])
+// //     }
+// // }
+
+// value.forEach(k=>{
+//     for(let key in k){
+//         print(k[key])
+//     }
 
 
-// let arry = [1,3,4,5,6]
-// let answer = arry.map((num) => num % 2 ==1)
+// })
 
-// let answer2 = arry.filter(num => num %2 == 0).map(num => num * 10)
-// let answer1 = arry.map((num) => num * 2)
+
 
