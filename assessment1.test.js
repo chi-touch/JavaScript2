@@ -1,11 +1,11 @@
-let {testHigherScore,testLowerScore,toAddStudentScore,toGetTheSquareOfNumbers,sarahBooks,jackTime,davidExpense} = require("./assessment1.js");
+let {testHigherScore,testLowerScore,toAddStudentScore,toGetTheSquareOfNumbers,sarahBooks,jackTime,davidExpense,amyShoppingList} = require("./assessment1.js");
 
 
 test("test to get numbers higer than 70", () =>{
     let student = [20,70,78,30,90,10,20,35,90,56]
     let studentResult = testHigherScore(student)   
     
-    console.log(studentResult)
+    // console.log(studentResult)
     expect(studentResult).toEqual([70,78,90,90]);
     
 })
@@ -13,7 +13,7 @@ test("test to get numbers higer than 70", () =>{
 test("test to get numbers lower than 70", () =>{
     let student = [20,70,78,30,90,10,20,35,90,56]
     let studentResult1 = testLowerScore(student)
-    console.log(studentResult1)
+    // console.log(studentResult1)
 
     expect(studentResult1).toEqual([20,30,10,20,35,56])
 })
@@ -49,19 +49,37 @@ test("test to check jasks time",() =>{
 })
 
 test("test to check david expenses",() =>{
-    let value = [{"groceries": 150},
-                {"dining out": 100}, 
-                {"transportation": 50}, 
-                {"entertainment": 80}]
-    let monthlyExpense = [150,100,50,80]
-    //let monthly=  davidExpense(value)
-    //let monthly2 =davidExpense(monthlyExpense)    
-    let mont = davidExpense(monthlyExpense)   
+    let values = {"groceries": 150,
+                "dining out": 100, 
+                "transportation": 50, 
+                "entertainment": 80}
+       
+    let mont = davidExpense(values)   
    
    // expect(monthly2).toBe(380)
     expect(mont).toBe(380)
 })
 
+test("test to get the healthy food",() =>{
+    let shoppingList =[{ name: 'Apples', category: 'Fruits', isHealthy: true },
+                       { name: 'Potato Chips', category: 'Snacks', isHealthy: false },
+                       { name: 'Carrots', category: 'Vegetables', isHealthy: true },
+                       { name: 'Chocolate Bars', category: 'Sweets', isHealthy: false },
+                       { name: 'Greek Yogurt', category: 'Dairy', isHealthy: true },
+                       { name: 'Soda', category: 'Beverages', isHealthy: false }
+                      ];
+    let newShoppingList = amyShoppingList(shoppingList)
+    
+    expect(newShoppingList).toEqual([{ name: 'Apples', category: 'Fruits', isHealthy: true },
+                                  { name: 'Carrots', category: 'Vegetables', isHealthy: true },
+                                  { name: 'Greek Yogurt', category: 'Dairy', isHealthy: true }])
+    
+})
+
+// let newList = shoppingList.filter((item) => item.isHealthy == true);
+//     newList.forEach(element => console.log(element));
+    
+//     return newList
 
 
 

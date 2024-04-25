@@ -61,40 +61,40 @@ function jackTime(time){
 
 
 function davidExpense(expenses){
-
+       
     let total =0
-    let tot = 0;
-   for (let expense in expenses) {
-        for(let key in expense){
-            tot = expenses[expense]
-            total = expenses[key]+ tot
+
+    for (const key in expenses) {
+        if (expenses.hasOwnProperty(key)) {
+            total += expenses[key]
+            console.log(`${key}: ${expenses[key]}`);
         }
-        console.log(total)
-   }
-   return total
+    }
+  return total
 }
-module.exports = {testHigherScore,testLowerScore,toAddStudentScore,toGetTheSquareOfNumbers,sarahBooks,jackTime,davidExpense}
-
-// let print = console.log
-
-// let value = [{"groceries": 150},
-// {"dining out": 100}, 
-// {"transportation": 50}, 
-// {"entertainment": 80}]
-
-// // for (let key in value){
-// //     for(u in key){
-// //         print(value[u])
-// //     }
-// // }
-
-// value.forEach(k=>{
-//     for(let key in k){
-//         print(k[key])
-//     }
 
 
-// })
+function amyShoppingList(shoppingList){
+    let newList = shoppingList.filter((items) => items.isHealthy == true);
+        newList.forEach(element => (element));
+    
+    return newList
+}
+
+
+
+
+
+// let newList = shoppingList.filter((item) => item.isHealthy == true);
+//     newList.forEach(element => console.log(element));
+    
+//     return newList
+
+
+
+
+module.exports = {testHigherScore,testLowerScore,toAddStudentScore,toGetTheSquareOfNumbers,sarahBooks,jackTime,davidExpense,amyShoppingList}
+
 
 
 
